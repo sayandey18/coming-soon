@@ -30,19 +30,20 @@ body {
 
 }
 
-.wrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    animation: fadeIn 1000ms ease;
-    -webkit-animation: fadeIn 1000ms ease;
+.container {
+    max-width: 968px;
+    margin: 0 auto;
+}
 
+.about__container, .home__container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 40px;
     font-family: 'Poppins', sans-serif;
     margin-bottom: 0;
     line-height: 1;
@@ -86,7 +87,7 @@ h2 {
     text-decoration: none;
 }
 
-.page__link::before{
+.page__link::before {
     content: "";
     position: absolute;
     display: block;
@@ -109,7 +110,7 @@ h2 {
 }
 
 p {
-    text-align: justify;
+    text-align: left;
     margin: 18px;
     font-family: 'Muli', sans-serif;
     font-weight: normal;
