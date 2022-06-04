@@ -1,22 +1,41 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaPaperPlane } from "react-icons/fa";
 
-function About() {
+const data = [
+    {
+        facebook: 'https://www.facebook.com/sayan.dey9239/',
+        instagram: 'https://www.instagram.com/iam.sayandey/',
+        email: 'mailto:mr.sayandey18@gmail.com'
+    },
+]
+
+function Coming() {
     return (
-        <div className="wrapper">
-            <h2 className='dev__domain'>sayandey.dev</h2>
-            <p className="registered__date"><strong>Registered on:</strong> 04 June 2022</p>
-            <p className="owner__name"><strong>Owner:</strong> Sayan Dey</p>
-            <p className='about__domain'>.dev is a top-level domain name operated by Google.
-                It was proposed in ICANN's new generic top-level domain program,
-                and became available to the general public on March 1, 2019,
-                with an early access period that began on February 19.
-            </p>
-            <div className="link__div">
-                <Link to="/" className="page__link">back to Home</Link>
+        <div className="container home__container">
+            <div>
+                <h1>coming soon<span className="dot">.</span></h1>
+                <div className="link__div">
+                    <Link to="/about" className="page__link">sayandey.dev</Link>
+                </div>
+
+                {
+                    data.map(({ facebook, instagram, email }, index) => {
+                        return (
+                            <div className="icons">
+                                <a href={facebook} target="_blank"><FaFacebook /></a>
+                                <a href={instagram} target="_blank"><FaInstagram /></a>
+                                <a href={email} target="_blank"><FaPaperPlane /></a>
+                            </div>
+                        )
+                    })
+                }
+
             </div>
         </div>
     )
 }
 
-export default About
+export default Coming
